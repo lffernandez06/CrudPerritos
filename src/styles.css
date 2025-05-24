@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+.container {
+
+  background-color: rgba(81, 125, 221, 0.632);
+  width: 180px;
+  border-radius: 20px;
+  border: 1px;
+  padding: 7px;
+  margin: 5px;
+  border-width: 1px;
+  border-color:rgba(162, 151, 218, 0.666);
+
+}
+.container:hover {
+  background-color: rgb(51, 94, 154);
+  color: white;
+}
+
+.container2 {
+
+  background-color: rgba(247, 55, 2, 0.803);
+  width: 180px;
+  border-radius: 20px;
+  border: 1px;
+  padding: 7px;
+  margin: 5px;
+  border-width: 1px;
+  border-color:rgba(162, 151, 218, 0.666);
+
+}

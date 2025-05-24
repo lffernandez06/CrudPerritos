@@ -1,0 +1,40 @@
+
+
+
+
+<div class="ml-4">
+
+      <h2 class="
+    text-3xl font-semibold
+    text-orange-600 ">
+    Lista de perros para agregar</h2>
+
+    <ul
+
+    class="
+
+    text-gray-400
+    text-xl font-normal
+
+     ">
+
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                  @for (item of dogList(); track $index) {
+                  <div
+                  (click)="pickDog(item.name, item.id)"
+                  class="
+
+                  cursor-pointer
+                  place-items-center container ">
+                  <li>{{item.name}}</li>
+
+                  </div>
+                }
+
+      </div>
+
+    </ul>
+
+</div>
+
+

@@ -1,0 +1,56 @@
+
+
+
+<div class="">
+
+
+  <div class=" relative flex min-h-screen flex-col ">
+
+        <div class="place-items-center mt-40">
+          <h1 class="
+          text-3xl font-semibold
+        text-orange-600 ">
+          Lista personalizada de perros</h1>
+        </div>
+
+        <div class="my-30 ml-100">
+        <seacrh-box-component (loadListByName)="newName($event)" />
+
+        </div>
+        <div class="mx-40">
+          <dog-list-component (dogId)="setDogId($event)" (dogName)="setDogName($event)" (dogUrl)="setImageDog($event)" [dogList]="loadListFilter()" />
+        </div>
+        <div class=" mx-auto max-w-screen-xl px-4 w-full">
+
+        <h2 class=" my-7 font-bold text-xl text-white">Perro a agregar:</h2>
+
+
+            @if ( dogName().length > 0) {
+                <div class="my-2 container2 place-items-center mb-4 font-bold text-xl text-white ">
+                <ul>{{ dogName() }}</ul>
+
+                </div>
+
+                <div class="mb-5">
+                <button (click)="addDog()" class=" container mb-4 font-bold text-xl text-gray-600"> Agregar</button>
+
+                </div>
+
+            }
+
+
+
+
+
+
+          <dog-card-component (dogIdDeleted)="removerCard($event)" [dogListCards]="newlistCardsDog()" [dogImage]="dogUrl()" [dogId]="dogId()" [dogName]="dogName()" />
+
+
+
+
+        </div>
+</div>
+
+
+
+</div>
