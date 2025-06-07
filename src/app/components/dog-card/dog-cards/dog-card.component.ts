@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, input, output, signal } from '@angular/core';
 import { DogBreedModel } from '../../../interfaces/dog-interfaces';
+import { TitleCasePipe } from '@angular/common';
 
 
 
 
 @Component({
   selector: 'dog-card-component',
-  imports: [],
+  imports: [TitleCasePipe],
   templateUrl: './dog-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

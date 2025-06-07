@@ -29,8 +29,8 @@
             <img [src]="item.url" alt="">
           </div>
         </div>
-        <div class="bg-white py-4 px-3">
-          <h3 class="text-xs mb-2 font-medium">{{item.name}}</h3>
+        <div class="bg-amber-100 py-4 px-3">
+          <h3 class="text-black font-bold text-xs mb-2">{{item.name | titlecase}}</h3>
           <div class="flex justify-between items-center">
             <p class="text-xs text-gray-400">
             {{item.id}}

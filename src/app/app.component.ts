@@ -5,7 +5,7 @@ import { SeacrhBoxComponent } from "./components/search-box/seacrh-box/seacrh-bo
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DogListCardComponent, SeacrhBoxComponent, DogListCardComponent],
+  imports: [ DogListCardComponent, DogListCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

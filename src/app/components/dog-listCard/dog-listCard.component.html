@@ -1,56 +1,64 @@
 
 
+<div class="min-h-screen flex flex-col bg-sky-800 text-white px-4 sm:px-6 lg:px-8">
 
-<div class="">
+  <!-- Título centrado -->
+  <div class="mt-20 text-center">
+    <h1 class="text-3xl font-semibold text-orange-500">
+      Lista personalizada de perros
+    </h1>
+  </div>
 
+  <!-- Search Box centrado y espaciado -->
+  <div class="my-10 flex justify-center">
 
-  <div class=" relative flex min-h-screen flex-col ">
+    <seacrh-box-component (loadListByName)="newName($event)" />
 
-        <div class="place-items-center mt-40">
-          <h1 class="
-          text-3xl font-semibold
-        text-orange-600 ">
-          Lista personalizada de perros</h1>
-        </div>
+  </div>
 
-        <div class="my-30 ml-100">
-        <seacrh-box-component (loadListByName)="newName($event)" />
+  <!-- Dog list -->
+  <div class="mx-auto w-full max-w-7xl px-2 sm:px-4">
+    <dog-list-component
+      (dogId)="setDogId($event)"
+      (dogName)="setDogName($event)"
+      (dogUrl)="setImageDog($event)"
+      [dogList]="loadListFilter()"
+    />
+  </div>
 
-        </div>
-        <div class="mx-40">
-          <dog-list-component (dogId)="setDogId($event)" (dogName)="setDogName($event)" (dogUrl)="setImageDog($event)" [dogList]="loadListFilter()" />
-        </div>
-        <div class=" mx-auto max-w-screen-xl px-4 w-full">
+  <!-- Sección de perro a agregar -->
+  <div class="mx-auto w-full max-w-screen-lg px-2 sm:px-4 mt-10">
+    <h2 class="mb-5 font-bold text-xl">Perro a agregar:</h2>
 
-        <h2 class=" my-7 font-bold text-xl text-white">Perro a agregar:</h2>
+    @if (dogName().length > 0) {
+      <div class="mb-4 text-center font-bold text-xl">
+        <ul>{{ dogName() | titlecase }}</ul>
+      </div>
 
+      <div class="flex justify-center mb-5">
+        <button
+          (click)="addDog()"
+          class="cursor-pointer bg-white text-gray-800 px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition"
+        >
+          Agregar
+        </button>
+      </div>
+    }
 
-            @if ( dogName().length > 0) {
-                <div class="my-2 container2 place-items-center mb-4 font-bold text-xl text-white ">
-                <ul>{{ dogName() }}</ul>
+    <!-- Dog cards -->
+     <div class="justify-items-center">
+      <div>
+        <dog-card-component
+      (dogIdDeleted)="removerCard($event)"
+      [dogListCards]="newlistCardsDog()"
+      [dogImage]="dogUrl()"
+      [dogId]="dogId()"
+      [dogName]="dogName()"
+    />
+      </div>
 
-                </div>
+     </div>
 
-                <div class="mb-5">
-                <button (click)="addDog()" class=" container mb-4 font-bold text-xl text-gray-600"> Agregar</button>
-
-                </div>
-
-            }
-
-
-
-
-
-
-          <dog-card-component (dogIdDeleted)="removerCard($event)" [dogListCards]="newlistCardsDog()" [dogImage]="dogUrl()" [dogId]="dogId()" [dogName]="dogName()" />
-
-
-
-
-        </div>
-</div>
-
-
+  </div>
 
 </div>

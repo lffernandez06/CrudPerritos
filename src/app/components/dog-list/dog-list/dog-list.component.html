@@ -1,40 +1,26 @@
 
 
 
-
 <div class="ml-4">
+  <h2 class="text-3xl font-semibold text-orange-600">
+    Lista de perros para agregar
+  </h2>
 
-      <h2 class="
-    text-3xl font-semibold
-    text-orange-600 ">
-    Lista de perros para agregar</h2>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 text-gray-400 text-xl font-normal mt-4">
+    @for (item of dogList(); track $index) {
 
-    <ul
-
-    class="
-
-    text-gray-400
-    text-xl font-normal
-
-     ">
-
-      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
-                  @for (item of dogList(); track $index) {
-                  <div
-                  (click)="pickDog(item.name, item.id)"
-                  class="
-
-                  cursor-pointer
-                  place-items-center container ">
-                  <li>{{item.name}}</li>
-
-                  </div>
-                }
+      <li
+        (click)="pickDog(item.name, item.id)"
+        class="cursor-pointer bg-gray-100 shadow-md rounded-xl p-4 hover:bg-orange-400 transition-all"
+      >
+      <div class="justify-items-center">
+        <div>
+          {{ item.name | titlecase }}
+        </div>
 
       </div>
 
-    </ul>
-
+      </li>
+    }
+  </ul>
 </div>
-
-

@@ -4,6 +4,7 @@ import { DogCardsComponent } from "../dog-card/dog-cards/dog-card.component";
 import { DogListComponent } from "../dog-list/dog-list/dog-list.component";
 import { DogBreedModel, DogCard } from '../../interfaces/dog-interfaces';
 import { DogService } from '../../services/dog.services';
+import { TitleCasePipe } from '@angular/common';
 
 
 
@@ -11,7 +12,7 @@ import { DogService } from '../../services/dog.services';
 
 @Component({
   selector: 'dog-listCard-component',
-  imports: [SeacrhBoxComponent, DogCardsComponent, DogListComponent],
+  imports: [TitleCasePipe, SeacrhBoxComponent, DogCardsComponent, DogListComponent],
   templateUrl: './dog-listCard.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

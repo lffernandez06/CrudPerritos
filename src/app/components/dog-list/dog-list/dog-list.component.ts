@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, input, output, signal } from '@angular/core';
 import { DogBreedModel } from '../../../interfaces/dog-interfaces';
 import { DogService } from '../../../services/dog.services';
+import { TitleCasePipe } from '@angular/common';
 
 
 
@@ -8,7 +9,7 @@ import { DogService } from '../../../services/dog.services';
 
 @Component({
   selector: 'dog-list-component',
-  imports: [],
+  imports: [TitleCasePipe],
   templateUrl: './dog-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
